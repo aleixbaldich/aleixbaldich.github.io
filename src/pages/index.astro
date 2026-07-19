@@ -1,5 +1,5 @@
 ---
-
+// Configuración de Astro
 ---
 
 <html lang="en">
@@ -11,132 +11,163 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Aleix Baldich | portfolio</title>
 		<style>
-      
-      :root {
-        --bg-color: #121212;
-        --text-color: #a3a3a3;
-        --text-heading: #f3f4f6;
-        --accent: #ec4899; 
-        --border-color: #262626;
-      }
+			:root {
+				--bg-color: #121212;
+				--text-color: #a3a3a3;
+				--text-heading: #f3f4f6;
+				--accent: #ffffff; 
+				--border-color: #262626;
+			}
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        max-width: 680px; 
-        margin: 0 auto;
-        padding: 4rem 1.5rem;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+				background-color: var(--bg-color);
+				color: var(--text-color);
+				max-width: 750px; 
+				margin: 0 auto;
+				padding: 4rem 1.5rem;
+				line-height: 1.6;
+				-webkit-font-smoothing: antialiased;
+			}
+			
+			header {
+				margin-bottom: 3rem;
+			}
 
-      
-      header {
-        margin-bottom: 3rem;
-      }
+			h1 {
+				font-size: 2rem;
+				font-weight: 700;
+				color: var(--text-heading);
+				margin-bottom: 0.5rem;
+				letter-spacing: -0.025em;
+			}
 
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--text-heading);
-        margin-bottom: 0.5rem;
-        letter-spacing: -0.025em;
-      }
+			h2 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				color: var(--text-heading);
+				margin-top: 3rem;
+				margin-bottom: 0.25rem;
+				letter-spacing: -0.025em;
+			}
 
-      h2 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--text-heading);
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
-        letter-spacing: -0.025em;
-      }
+			.section-subtitle {
+				font-size: 0.9rem;
+				color: #737373;
+				margin-bottom: 1.5rem;
+				margin-top: 0;
+			}
 
-      p {
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
-      }
+			p {
+				margin-bottom: 1rem;
+				font-size: 0.95rem;
+			}
 
-      strong {
-        color: var(--text-heading);
-        font-weight: 500;
-      }
+			strong {
+				color: var(--text-heading);
+				font-weight: 500;
+			}
 
-      /* Enlaces de contacto */
-      .links-contact {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-        font-size: 0.9rem;
-      }
+			
+			.links-contact {
+				display: flex;
+				gap: 1rem;
+				margin-top: 1rem;
+				font-size: 0.9rem;
+			}
 
-      
-      .projects-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
+			a {
+				color: var(--text-heading);
+				text-decoration: underline;
+				text-underline-offset: 4px;
+				text-decoration-color: #404040;
+				transition: text-decoration-color 0.2s ease, color 0.2s ease;
+			}
 
-      .project-item {
-        text-decoration: none;
-        display: block;
-        padding: 1rem;
-        margin: 0 -1rem; 
-        border-radius: 8px;
-        transition: background-color 0.2s ease, border-color 0.2s ease;
-        border: 1px solid transparent;
-      }
+			a:hover {
+				color: var(--accent);
+				text-decoration-color: var(--accent);
+			}
 
-      .project-item:hover {
-        background-color: #1a1a1a;
-        border-color: var(--border-color);
-      }
+			
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+			}
 
-      .project-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 0.25rem;
-      }
+			
+			@media (max-width: 600px) {
+				.projects-grid {
+					grid-template-columns: 1fr;
+				}
+			}
 
-      .project-title {
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--text-heading);
-        transition: color 0.2s ease;
-      }
+			.project-card {
+				text-decoration: none !important; 
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: 1.5rem;
+				background-color: transparent;
+				border: 1px solid var(--border-color);
+				border-radius: 12px;
+				transition: border-color 0.2s ease, background-color 0.2s ease;
+			}
 
-      .project-item:hover .project-title {
-        color: var(--accent);
-      }
+			.project-card:hover {
+				border-color: #404040;
+				background-color: #161616;
+			}
 
-      .project-tech {
-        font-size: 0.8rem;
-        color: #64748b;
-        font-family: monospace;
-      }
+			.project-title-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-bottom: 0.75rem;
+			}
 
-      .project-desc {
-        font-size: 0.9rem;
-        color: #737373;
-        margin: 0;
-      }
+			.project-title {
+				font-size: 1.1rem;
+				font-weight: 600;
+				color: var(--text-heading);
+			}
 
-      
-      a {
-        color: var(--text-heading);
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-color: #404040;
-        transition: text-decoration-color 0.2s ease, color 0.2s ease;
-      }
+			.arrow-icon {
+				font-size: 1rem;
+				color: #737373;
+				transition: color 0.2s ease, transform 0.2s ease;
+			}
 
-      a:hover {
-        color: var(--accent);
-        text-decoration-color: var(--accent);
-      }
-    </style>
+			.project-card:hover .arrow-icon {
+				color: var(--text-heading);
+				transform: translate(2px, -2px);
+			}
+
+			.project-desc {
+				font-size: 0.9rem;
+				color: #a3a3a3;
+				margin: 0 0 1.5rem 0;
+				line-height: 1.5;
+			}
+
+			/* Contenedor de Etiquetas (Tags) */
+			.project-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+
+			.tag {
+				font-size: 0.75rem;
+				font-family: monospace;
+				color: #a3a3a3;
+				background-color: transparent;
+				border: 1px solid var(--border-color);
+				padding: 0.2rem 0.6rem;
+				border-radius: 6px;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
@@ -148,7 +179,58 @@
 				<a href="https://www.linkedin.com/in/aleix-baldich-19b78a351/" target="_blank">LinkedIn</a>
 			</div>
 		</header>
+		<main>
+			<section>
+				<h2>projects ↗</h2>
+				<div class="projects-grid">
 
-		
+					<!-- Tarjeta 1 -->
+					<a href="https://github.com/aleixbaldich/java-log-analyzer-cli" target="_blank" class="project-card">
+						<div>
+							<div class="project-title-container">
+								<span class="project-title">Java Log Analyzer CLI</span>
+								<span class="arrow-icon">↗</span>
+							</div>
+							<p class="project-desc">Herramienta CLI para la detección automatizada de accesos fuera de hora, IPs sospechosas e inicios de sesión fallidos en registros.</p>
+						</div>
+						<div class="project-tags">
+							<span class="tag">Java</span>
+							<span class="tag">HashMap</span>
+						</div>
+					</a>
+
+					<!-- Tarjeta 2 -->
+					<a href="https://github.com/aleixbaldich/passguard-cli" target="_blank" class="project-card">
+						<div>
+							<div class="project-title-container">
+								<span class="project-title">PassGuard CLI</span>
+								<span class="arrow-icon">↗</span>
+							</div>
+							<p class="project-desc">Analizador local de robustez de contraseñas desarrollado en Python. Incluye testing automatizado de políticas de seguridad.</p>
+						</div>
+						<div class="project-tags">
+							<span class="tag">Python</span>
+							<span class="tag">pytest</span>
+						</div>
+					</a>
+
+					<!-- Tarjeta 3 -->
+					<a href="https://github.com/aleixbaldich/local-port-scanner" target="_blank" class="project-card">
+						<div>
+							<div class="project-title-container">
+								<span class="project-title">Local Port Scanner</span>
+								<span class="arrow-icon">↗</span>
+							</div>
+							<p class="project-desc">Utilidad de consola para el escaneo de puertos de red y mapeo de servicios activos en entornos de laboratorio.</p>
+						</div>
+						<div class="project-tags">
+							<span class="tag">Java</span>
+							<span class="tag">Sockets</span>
+						</div>
+					</a>
+
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
