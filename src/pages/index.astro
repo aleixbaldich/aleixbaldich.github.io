@@ -3,256 +3,306 @@
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Aleix Baldich | portfolio</title>
-		<style>
-			:root {
-				--bg-color: #121212;
-				--text-color: #a3a3a3;
-				--text-heading: #f3f4f6;
-				--accent: #ffffff; 
-				--border-color: #262626;
-			}
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Aleix Baldich | portfolio</title>
+        <style>
+            :root {
+                --bg-color: #121212;
+                --text-color: #a3a3a3;
+                --text-heading: #f3f4f6;
+                --accent: #ffffff; 
+                --border-color: #262626;
+            }
 
-			body {
-				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-				background-color: var(--bg-color);
-				color: var(--text-color);
-				max-width: 750px; 
-				margin: 0 auto;
-				padding: 4rem 1.5rem;
-				line-height: 1.6;
-				-webkit-font-smoothing: antialiased;
-			}
-			
-			header {
-				margin-bottom: 3rem;
-			}
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                max-width: 750px; 
+                margin: 0 auto;
+                padding: 4rem 1.5rem;
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
+            }
+            
+            header {
+                margin-bottom: 3rem;
+            }
 
-			h1 {
-				font-size: 2rem;
-				font-weight: 700;
-				color: var(--text-heading);
-				margin-bottom: 0.5rem;
-				letter-spacing: -0.025em;
-			}
+            h1 {
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--text-heading);
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.025em;
+            }
 
-			h2 {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: var(--text-heading);
-				margin-top: 3rem;
-				margin-bottom: 0.25rem;
-				letter-spacing: -0.025em;
-			}
+            h2 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: var(--text-heading);
+                margin-top: 3rem;
+                margin-bottom: 0.25rem;
+                letter-spacing: -0.025em;
+            }
 
-			.section-subtitle {
-				font-size: 0.9rem;
-				color: #737373;
-				margin-bottom: 1.5rem;
-				margin-top: 0;
-			}
+            p {
+                margin-bottom: 1rem;
+                font-size: 0.95rem;
+            }
 
-			p {
-				margin-bottom: 1rem;
-				font-size: 0.95rem;
-			}
+            strong {
+                color: var(--text-heading);
+                font-weight: 500;
+            }
 
-			strong {
-				color: var(--text-heading);
-				font-weight: 500;
-			}
+            .links-contact {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+                font-size: 0.9rem;
+            }
 
-			
-			.links-contact {
-				display: flex;
-				gap: 1rem;
-				margin-top: 1rem;
-				font-size: 0.9rem;
-			}
+            a {
+                color: var(--text-heading);
+                text-decoration: underline;
+                text-underline-offset: 4px;
+                text-decoration-color: #404040;
+                transition: text-decoration-color 0.2s ease, color 0.2s ease;
+            }
 
-			a {
-				color: var(--text-heading);
-				text-decoration: underline;
-				text-underline-offset: 4px;
-				text-decoration-color: #404040;
-				transition: text-decoration-color 0.2s ease, color 0.2s ease;
-			}
+            a:hover {
+                color: var(--accent);
+                text-decoration-color: var(--accent);
+            }
 
-			a:hover {
-				color: var(--accent);
-				text-decoration-color: var(--accent);
-			}
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
 
-			
-			.projects-grid {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 1rem;
-			}
+            @media (max-width: 600px) {
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
 
-			
-			@media (max-width: 600px) {
-				.projects-grid {
-					grid-template-columns: 1fr;
-				}
-			}
+            .project-card {
+                text-decoration: none !important; 
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 1.5rem;
+                background-color: transparent;
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                transition: border-color 0.2s ease, background-color 0.2s ease;
+            }
 
-			.project-card {
-				text-decoration: none !important; 
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				padding: 1.5rem;
-				background-color: transparent;
-				border: 1px solid var(--border-color);
-				border-radius: 12px;
-				transition: border-color 0.2s ease, background-color 0.2s ease;
-			}
+            .project-card:hover {
+                border-color: #404040;
+                background-color: #161616;
+            }
 
-			.project-card:hover {
-				border-color: #404040;
-				background-color: #161616;
-			}
+            .project-title-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 0.75rem;
+            }
 
-			.project-title-container {
-				display: flex;
-				justify-content: space-between;
-				align-items: flex-start;
-				margin-bottom: 0.75rem;
-			}
+            .project-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--text-heading);
+            }
 
-			.project-title {
-				font-size: 1.1rem;
-				font-weight: 600;
-				color: var(--text-heading);
-			}
+            .arrow-icon {
+                font-size: 1rem;
+                color: #737373;
+                transition: color 0.2s ease, transform 0.2s ease;
+            }
 
-			.arrow-icon {
-				font-size: 1rem;
-				color: #737373;
-				transition: color 0.2s ease, transform 0.2s ease;
-			}
+            .project-card:hover .arrow-icon {
+                color: var(--text-heading);
+                transform: translate(2px, -2px);
+            }
 
-			.project-card:hover .arrow-icon {
-				color: var(--text-heading);
-				transform: translate(2px, -2px);
-			}
+            .project-desc {
+                font-size: 0.9rem;
+                color: #a3a3a3;
+                margin: 0 0 1.5rem 0;
+                line-height: 1.5;
+            }
 
-			.project-desc {
-				font-size: 0.9rem;
-				color: #a3a3a3;
-				margin: 0 0 1.5rem 0;
-				line-height: 1.5;
-			}
+            .project-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
 
-			
-			.project-tags {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5rem;
-			}
+            .tag {
+                font-size: 0.75rem;
+                font-family: monospace;
+                color: #a3a3a3;
+                background-color: transparent;
+                border: 1px solid var(--border-color);
+                padding: 0.2rem 0.6rem;
+                border-radius: 6px;
+            }
 
-			.tag {
-				font-size: 0.75rem;
-				font-family: monospace;
-				color: #a3a3a3;
-				background-color: transparent;
-				border: 1px solid var(--border-color);
-				padding: 0.2rem 0.6rem;
-				border-radius: 6px;
-			}
-			.links-contact a {
-				margin: 0 0.25rem; 
-			}
+            .links-contact a {
+                margin: 0 0.25rem; 
+            }
 
-			.links-contact p {
-				word-spacing: 0.1rem;
-			}
-		</style>
-	</head>
-	<body>
-		<header>
-			<h1>Aleix Baldich</h1>
-			<p>Computer Science and Information Systems Engineering student. 
-				Highly passionate about <strong>artificial intelligence, process automation</strong> , and actively steering my career toward <strong>cybersecurity</strong>. </p>
-			
-			<div class="links-contact">
-				<a href="https://github.com/aleixbaldich" target="_blank">GitHub</a>
-				<a href="https://www.linkedin.com/in/aleix-baldich-19b78a351/" target="_blank">LinkedIn</a>
-			</div>
-		</header>
-		<main>
-			<section>
-				<h2>Projects ↗</h2>
-				<div class="projects-grid">
+            .links-contact p {
+                word-spacing: 0.1rem;
+            }
 
-					<!-- Tarjeta 1 -->
-					<a href="https://github.com/aleixbaldich/java-log-analyzer-cli" target="_blank" class="project-card">
-						<div>
-							<div class="project-title-container">
-								<span class="project-title">Java Log Analyzer CLI</span>
-								<span class="arrow-icon">↗</span>
-							</div>
-							<p class="project-desc">A defensive cybersecurity CLI tool that parses authentication logs to detect brute-force activity, suspicious IP addresses, and anomalous after-hours logins.</p>
-						</div>
-						<div class="project-tags">
-							<span class="tag">Java</span>
-							<span class="tag">Log Analysis</span>
-							<span class="tag">Cybersecurity</span>
-						</div>
-					</a>
+            /* --- ESTILS DEL FOOTER (CSS PUR) --- */
+            footer {
+                margin-top: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 0.85rem;
+                color: #737373;
+            }
 
-					<!-- Tarjeta 2 -->
-					<a href="https://github.com/aleixbaldich/passguard-cli" target="_blank" class="project-card">
-						<div>
-							<div class="project-title-container">
-								<span class="project-title">PassGuard CLI</span>
-								<span class="arrow-icon">↗</span>
-							</div>
-							<p class="project-desc">Lightweight local CLI tool to evaluate password strength and compliance against security policies, built with automated testing.</p>
-						</div>
-						<div class="project-tags">
-							<span class="tag">Python</span>
-							<span class="tag">pytest</span>
-							<span class="tag">CLI</span>
-						</div>
-					</a>
+            footer p {
+                margin: 0;
+            }
 
-					<!-- Tarjeta 3 -->
-					<a href="https://github.com/aleixbaldich/local-port-scanner" target="_blank" class="project-card">
-						<div>
-							<div class="project-title-container">
-								<span class="project-title">Local Port Scanner</span>
-								<span class="arrow-icon">↗</span>
-							</div>
-							<p class="project-desc">A networking utility that scans target hosts for open ports and maps active local services using multi-threaded socket connections.</p>
-						</div>
-						<div class="project-tags">
-							<span class="tag">Java</span>
-							<span class="tag">Networking</span>
-							<span class="tag">Sockets</span>
-						</div>
-					</a>
+            .back-to-top-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                padding: 0.4rem 0.8rem;
+                border-radius: 6px;
+                border: 1px solid var(--border-color);
+                background-color: transparent;
+                color: var(--text-color);
+                font-size: 0.8rem;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
 
-				</div>
-			</section>
-			<section>
-			<h2>Let's Connect</h2>
-			<div class="links-contact">
-				<p>
-					Connect with me on 
-					<a href="https://github.com/aleixbaldich" target="_blank">GitHub</a>·<a href="https://www.linkedin.com/in/aleix-baldich-19b78a351/" target="_blank">LinkedIn</a> 
-					or send me an email at 
-					<a href="mailto:aleix.baldich@gmail.com" class="highlight-email">aleix.baldich@gmail.com</a>
-				</p>
-			</div>
-			</section>
-		</main>
-	</body>
+            .back-to-top-btn:hover {
+                border-color: #404040;
+                background-color: #161616;
+                color: var(--text-heading);
+            }
+
+            .back-to-top-btn svg {
+                width: 14px;
+                height: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Aleix Baldich</h1>
+            <p>Computer Science and Information Systems Engineering student. 
+                Highly passionate about <strong>artificial intelligence, process automation</strong>, and actively steering my career toward <strong>cybersecurity</strong>.</p>
+            
+            <div class="links-contact">
+                <a href="https://github.com/aleixbaldich" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/aleix-baldich-19b78a351/" target="_blank">LinkedIn</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <h2>Projects ↗</h2>
+                <div class="projects-grid">
+
+                    <!-- Tarjeta 1 -->
+                    <a href="https://github.com/aleixbaldich/java-log-analyzer-cli" target="_blank" class="project-card">
+                        <div>
+                            <div class="project-title-container">
+                                <span class="project-title">Java Log Analyzer CLI</span>
+                                <span class="arrow-icon">↗</span>
+                            </div>
+                            <p class="project-desc">A defensive cybersecurity CLI tool that parses authentication logs to detect brute-force activity, suspicious IP addresses, and anomalous after-hours logins.</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Log Analysis</span>
+                            <span class="tag">Cybersecurity</span>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 2 -->
+                    <a href="https://github.com/aleixbaldich/passguard-cli" target="_blank" class="project-card">
+                        <div>
+                            <div class="project-title-container">
+                                <span class="project-title">PassGuard CLI</span>
+                                <span class="arrow-icon">↗</span>
+                            </div>
+                            <p class="project-desc">Lightweight local CLI tool to evaluate password strength and compliance against security policies, built with automated testing.</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">pytest</span>
+                            <span class="tag">CLI</span>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 3 -->
+                    <a href="https://github.com/aleixbaldich/local-port-scanner" target="_blank" class="project-card">
+                        <div>
+                            <div class="project-title-container">
+                                <span class="project-title">Local Port Scanner</span>
+                                <span class="arrow-icon">↗</span>
+                            </div>
+                            <p class="project-desc">A networking utility that scans target hosts for open ports and maps active local services using multi-threaded socket connections.</p>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Sockets</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+            <section>
+                <h2>Let's Connect</h2>
+                <div class="links-contact">
+                    <p>
+                        Connect with me on 
+                        <a href="https://github.com/aleixbaldich" target="_blank">GitHub</a>·<a href="https://www.linkedin.com/in/aleix-baldich-19b78a351/" target="_blank">LinkedIn</a> 
+                        or send me an email at 
+                        <a href="mailto:aleix.baldich@gmail.com" class="highlight-email">aleix.baldich@gmail.com</a>
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 | Aleix Baldich</p>
+            <button id="back-to-top" class="back-to-top-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m18 15-6-6-6 6"/>
+                </svg>
+                <span>Back to top</span>
+            </button>
+        </footer>
+
+        <script>
+            const backToTopBtn = document.getElementById('back-to-top');
+
+            backToTopBtn?.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        </script>
+    </body>
 </html>
