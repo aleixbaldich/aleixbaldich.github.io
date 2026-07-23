@@ -104,6 +104,7 @@
                 border-radius: 12px;
                 transition: border-color 0.2s ease, background-color 0.2s ease;
             }
+            
 
             .project-card:hover {
                 border-color: #404040;
@@ -145,6 +146,36 @@
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.5rem;
+            }
+            .work-item  {
+                margin-bottom: 2rem;
+            }
+
+            .work-header{
+                display:flex;
+                flex-direction: column;
+                gap: 0.15rem;
+                margin-bottom: 1rem;
+            }
+
+            .work-company{
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--text-heading);
+            }
+            .work-role {
+                font-size: 0.95rem;
+                color: #a3a3a3;
+            }
+            .work-date {
+                font-size: 0.85rem;
+                color: #737373;
+            }
+            .work-desc {
+                font-size: 0.95rem;
+                color: #a3a3a3;
+                line-height: 1.6;
+                margin: 0;
             }
 
             .tag {
@@ -270,6 +301,21 @@
                     </a>
 
                 </div>
+            </section>
+            <section>
+                <h2>Work</h2>                    
+                <div class ="work-item">
+                    <div class ="work-header">
+                        <span class="work-company">Thrax</span>
+                        <span class="work-role">Web Developer</span>
+                        <span class="work-date">June 2023 - Sep 2023</span>
+                    </div>
+                    <p class="work-desc">
+                        Design, development, and maintenance of corporate websites using WordPress and HTML.
+                    </p>
+                </div>                      
+                    
+                
             </section>
             <section>
                 <h2>Let's Connect</h2>
